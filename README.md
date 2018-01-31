@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # NE 204 Report Template
 
 This repo contains the skeleton of a project for building lab reports from 
@@ -20,3 +21,6 @@ git init
 git fetch --depth=1 -n https://github.com/NE204-Spring2018/lab_report_template.git
 git reset --hard $(git commit-tree FETCH_HEAD^{tree} -m "initial commit")
 ```
+=======
+# dvstepter-lab0
+>>>>>>> origin/master
