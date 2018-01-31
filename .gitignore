@@ -7,3 +7,13 @@
 
 # Ignore data folder
 data/*
+
+# Mac Stuff
+.DS_Store
+
+# Ignore some latex stuff
+*.aux
+*.bbl
+*.blg
+*.log
+*.pdf
