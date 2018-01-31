@@ -15,8 +15,8 @@ data :
 
 # Validate that downloaded data is not corrupted
 validate :
-	echo "WARNING: make validate has not yet been implemented."
-
+	curl -L -o lab0_spectral_data.md5sum https://www.dropbox.com/s/6jquiryg6jskii0/lab0_spectral_data.md5?dl=0
+	md5sum -c lab0_spectral_data.md5sum
 # Run tests on analysis code
 test :
 	nosetests --no-byte-compile test/*
