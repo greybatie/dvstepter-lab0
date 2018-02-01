@@ -33,4 +33,14 @@ Experimental results go here.
 
 \end{figure}
 
-\csvautotabular{/Users/darrellstepter/repos/school/NE204/Lab0/dvstepter-lab0/images/peakdiffquant.csv}
+
+
+\pgfplotstabletypeset[%
+   fixed zerofill,
+   precision=4,
+   col sep=space,
+   dec sep align,
+   columns/0/.style ={column name=Actual Energy (KeV)},
+   columns/1/.style ={column name=Calibrated Energy (KeV)},
+   columns/2/.style ={column name=Percent Difference (\%)},
+]{/Users/darrellstepter/repos/school/NE204/Lab0/dvstepter-lab0/images/peakdiffquant.csv}
