@@ -5,7 +5,6 @@ import numpy as np
 f=open('/Users/darrellstepter/repos/school/NE204/Lab0/dvstepter-lab0/lab0_spectral_data.txt')
 lines=f.readlines()[1:]
 
-
 Am241=[] # 59.54 keV
 Ba133=[] # 80.997 keV (34%) 302.853 keV (18%) 356.017 keV (62%)
 Cs137=[] # 661.66 keV
@@ -44,8 +43,12 @@ chan_array=np.array(chan)
 for i in chan:
     energies.append(np.multiply(m, chan_array[i-1])+b)
 
-
-plt.semilogy(chan, Am241,chan, Ba133,chan, Cs137, chan,Co60, chan, Eu152) #Makes raw data plot
+#Makes raw data plot
+plt.semilogy(chan, Am241, label='Am-241')
+plt.semilogy(chan, Ba133, label='Ba-133')
+plt.semilogy(chan, Cs137, label='Cs-137')
+plt.semilogy(chan,Co60, label='Co-60')
+plt.semilogy(chan, Eu152, label='Eu-152')
 plt.title('Raw Data')
 plt.xlabel('Channel Number')
 plt.ylabel('Counts')
