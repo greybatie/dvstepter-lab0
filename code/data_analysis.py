@@ -69,5 +69,20 @@ plt.show()
 #Gamma Energies of Ba-133, ignored 79.6142 because too close to 80.9979 which is 10x more likely
 from find_nearest import find_near
 
-Ba133_energies=[80.9979,276.3989,302.8508, 356.0129,383.8485]
-dE=20
+Ba_a=[80.9979,276.3989,302.8508, 356.0129,383.8485]
+Ba_e=[]
+dE=10
+
+for x in range(0,5):
+    minE=Ba_a[int(x)]-dE
+    maxE=Ba_a[int(x)]+dE
+
+    nearestmin=find_near(energies,minE)
+    nearestmax=find_near(energies,maxE)
+
+    Erange=energies[nearestmin[0]:nearestmax[0]]
+    Countrange=Ba133[nearestmin[0]:nearestmax[0]]
+    #print(Erange, Countrange)
+    maxcounts=max(Countrange)
+    ECentroid=Erange[Countrange.index(maxcounts)]
+    Ba_e.append(ECentroid)

@@ -8,5 +8,8 @@ def find_near(array,value):
     outputs teh index of that array value as well
     as the value itself
     """
-    idx = (np.abs(array-value)).argmin()
-    return (idx,array[idx])
+    diff=np.abs(np.array(array)-value)
+    sort_diff=sorted(diff)
+    diff=diff.tolist()
+    index=diff.index(sort_diff[0])
+    return index, array[index]
