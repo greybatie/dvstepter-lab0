@@ -73,6 +73,10 @@ Ba_a=[80.9979,276.3989,302.8508, 356.0129,383.8485]
 Ba_e=[]
 dE=10
 
+percent_diff=[]
+table=[]
+
+#this loop finds the max energy in the range around each Ba_a value (or the centroid)
 for x in range(0,5):
     minE=Ba_a[int(x)]-dE
     maxE=Ba_a[int(x)]+dE
@@ -86,3 +90,8 @@ for x in range(0,5):
     maxcounts=max(Countrange)
     ECentroid=Erange[Countrange.index(maxcounts)]
     Ba_e.append(ECentroid)
+    percent_diff.append((Ba_e[x]-Ba_a[x])/Ba_a[x])
+    table.append([Ba_a[x], Ba_e[x], percent_diff[x]])
+
+
+np.savetxt('/Users/darrellstepter/repos/school/NE204/Lab0/dvstepter-lab0/images/peakdiffquant.csv', table)
