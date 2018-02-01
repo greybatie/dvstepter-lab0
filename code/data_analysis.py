@@ -67,7 +67,7 @@ plt.savefig('/Users/darrellstepter/repos/school/NE204/Lab0/dvstepter-lab0/images
 plt.show()
 
 #Gamma Energies of Ba-133, ignored 79.6142 because too close to 80.9979 which is 10x more likely
-Ba_energies_actual=[80.9979, 276.3989, 302.8508, 356.0129, 383.8485]
-Ba_energies_estimate=[]
+from find_nearest import find_near
 
-for i in Ba_energies_actual:
+Ba133_energies=[80.9979,276.3989,302.8508, 356.0129,383.8485]
+dE=20
