@@ -24,3 +24,30 @@ for x in lines:
 f.close()
 
 chan=list(range(1,len(Cs137)+1)) #number of channels:8192
+
+centroid_Cs=np.argmax(Cs137) # 661.66 keV
+centroid_Am=np.argmax(Am241) # 59.54 keV
+
+x1=centroid_Am
+x2=centroid_Cs
+
+y1=59.5409
+y2=661.657
+
+energies=[]
+m=float(y2-y1)/(x2-x1)
+b=float(-m*x1+y1)
+print(m,b)
+
+chan_array=np.array(chan)
+
+for i in chan:
+    energies.append(np.multiply(m, chan_array[i-1])+b)
+
+
+plt.semilogy(chan, Am241,chan, Ba133,chan, Cs137, chan,Co60, chan, Eu152) #Makes raw data plot
+plt.title('Raw Data')
+plt.xlabel('Channel Number')
+plt.ylabel('Counts')
+plt.savefig('/Users/darrellstepter/repos/school/NE204/Lab0/dvstepter-lab0/images/Raw_Spec.png')
+plt.show()
